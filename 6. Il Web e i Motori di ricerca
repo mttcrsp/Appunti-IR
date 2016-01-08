@@ -1,0 +1,24 @@
+#### Struttura del Web
+
+Il Web è una collezione di documenti. Il formato di questi documenti può variare ma la di preferenza sono ipertestuali e contengono collegamenti verso altri documenti. Si può pensare all’insieme dei documenti presenti sul Web come ad un grafo, in cui: i nodi sono gli URL e un arco fra un nodo $x$ e un nodo $y$ rappresenta la presenza di un URL x che punta verso l’URL y all’interno di una pagina. Le dimensioni di questo grafo sono difficili da valutare; comunque, sono enormi.
+
+Dato un grafo orientato $G = (V,E), definiamo una relazione $\leftrightarrow$ fra i nodi, ponendo $x \leftrightarrow y$ quando esistono un cammino da $x$ a $y$ e un cammino da $y$ a $x$. La relazione $\leftrightarrow$ è una relazione di equivalenza, le cui classi sono dette componenti (fortemente) connesse del grafo. È possibile costruire il grafo ridotto $G^*$, che ha come nodi le componenti connesse, e ha un arco fra la componente $C_i$ e la componente $C_j$ quando esiste un arco che va da un nodo di $C_i$ a un nodo di $C_j$.
+
+La struttura del Web viene detta “a cravattino” ed è costituita dalle seguenti componenti:
+
+- componente gigante, che comprende circa il 30% delle pagine;
+- componenti sorgente, che puntano direttamente o indirettamente verso la componente gigante ma non sono raggiungibili da essa, rappresentano circa il 24%;
+- componenti pozzo, sono raggiungibili dalla componente gigante ma non consentono di tornare ad essa, in testa categoria rientra la maggior parte dei documenti (sono i documenti senza link), rappresentano circa il 24%;
+- componenti isolate, non raggiungibili dalla componente gigante e da cui non si raggiunge la componente gigante;
+- tentacoli, collegamenti tra componenti sorgente e componente pozzo che non passano per la componente gigante.
+
+#### Crawler
+
+Un crawler o spider è uno dei componenti fondamentali di un motore di ricerca, il suo compito è quello di raccogliere pagine, compito che svolge effettuando un visita del grafo del web.
+
+I problemi fondamentali nel campo dei Web crawler sono rappresentati da
+
+- copertura, anche i migliori motori di ricerca coprono solo un parte ridotta del Web; - scelta del seme, la raccolta inizia a partire da una o più pagine, dette seme della raccolta; la scelta di questo seme influisce in maniera significativa sull’insieme delle pagine visitate, se si parte da una pagina facente parte della componente gigante, la maggior parte del web verrà visitata;
+- scelta delle pagine da scaricare, la scelta delle pagine da scaricare viene fatta in base al formato
+-
+-
